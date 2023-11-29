@@ -1,0 +1,62 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+// create a class
+class Narcissistic {
+  // private data member
+ private:
+  int number;
+
+  // public member functions
+ public:
+  // getNumber() function to insert number
+  void getNumber() {
+    cout << "Enter Number : ";
+    cin >> number;
+  }
+
+  // isNarcissistic() function to check if the number
+  // is narcissistic is or not
+  void isNarcissistic() {
+    // initialising  int type variables to perform operations
+    int temp = number, remain, power = 0, sum = 0;
+
+    // while loop to digits of the number
+    while (temp) {
+      power++;
+      temp = temp / 10;
+    }
+
+    temp = number;
+
+    // while loop to check the number
+    while (temp) {
+      remain = temp % 10;
+      sum = sum + pow(remain, power);
+      temp = temp / 10;
+    }
+
+    if (sum == number) {
+      cout << "It is a Narcissistic Number!" << endl;
+    } else {
+      cout << "It is not a Narcissistic Number!" << endl;
+    }
+  }
+};
+
+int main() {
+  // create an object
+  Narcissistic N;
+
+  // calling getNumber() function to
+  // insert the number
+  N.getNumber();
+
+  // calling isNarcissistic() function to check the
+  // number if it is a narcissistic number
+  N.isNarcissistic();
+
+  return 0;
+}
