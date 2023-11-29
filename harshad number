@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+bool isharshad(int num){
+  int originalnum=num;
+  int sum=0;
+   
+  while(num>0){
+    sum+=num%10;
+    num/=10;
+  }
+  return (originalnum%sum==0);
+}
+int main (){
+  int n;
+  
+  cout<<"enter the number:"<<endl;
+  cin>>n;
+  
+  if(isharshad(n))
+  {
+    cout<<"harshad"<<endl;
+    
+  }
+  else
+  {
+    cout<<"not harshad"<<endl;
+  }
+  return 0;
+}
