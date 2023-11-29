@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main ()  {
+  int n,temp,sum=0,originalnum;
+  
+  cin>>n;
+  originalnum=n;
+  while(sum !=1 && sum !=4) {
+    sum=0;
+    while(n>0)  {
+      temp=n%10;
+      sum +=temp*temp;
+      n /=10;
+    }
+    n=sum;
+  }
+  if(sum==1) {
+    cout<<originalnum<<" is happy number";
+  } else {
+    cout<<originalnum<<" is not happy number";
+  }
+  return 0;
+}
